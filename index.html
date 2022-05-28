@@ -1,0 +1,124 @@
+<script>
+    
+    // var can be used throughout whole program
+
+    var objA = "Hi Zain.";
+    console.log(objA);
+
+    objA = 10;
+    console.log(objA);
+
+
+    // let can be used within a scope of where you declared that
+
+    let objB = "Hi Ali.";
+    console.log(objB);
+
+    objB = 20;
+    console.log(objB);
+
+
+    // const can never be change
+    const objC = "Hi Saad.";
+    console.log(objC);
+
+    //objC = 30;        will thorw error
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    var a;
+    var b = 50;
+
+    console.log(a);
+    console.log(b);
+
+    a = null; 
+    console.log(a);
+
+    a = 10;
+    b = a 
+    console.log(a);
+    console.log(b);
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+
+    var sum = 100 + 5;
+    console.log("sum = " + sum);
+
+    var diff = 200 - 5;
+    console.log("difference = " + diff);
+
+    var product = 9 * 4;
+    console.log("Product = " + product);
+
+    var division = 100 / 2;
+    console.log("Division = " + division);
+    
+    var num = 1000;
+    num++;
+    console.log("Incremental = " + num);
+    num+=2;
+    console.log("Incremental = " + num);
+
+    num--;
+    console.log("Decremental = " + num);
+    num-=5;
+    console.log("Decremental = " + num);    
+
+    var remainder = 11 % 3;
+    console.log("Remainder = " + remainder);
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+
+    var name = "My name is " + "Zain ";
+    name += "Arif";
+    console.log(name);
+
+
+    var myStr = "I am \"double quotes\" inside double quotes";
+    console.log(myStr); 
+
+    myStr = "I am \'single quote\' inside double quotes";
+    console.log(myStr); 
+
+    myStr = 'I am "double quotes" inside single quote';
+    console.log(myStr);
+
+    myStr = 'I am \'single quote\' inside single quote';
+    console.log(myStr);
+    
+    myStr = `I am both 'single quote' & "double quotes" inside backticks`;
+    console.log(myStr);
+
+    myStr = "First line\n\t\\Second line\nThird line";
+    console.log(myStr);
+
+    myStr = "Zain"
+    console.log(myStr);
+    var myStrLen = myStr.length;
+    console.log(myStrLen);
+
+    for (let i = 0; i < myStr.length; i++) {
+        console.log(myStr[i]);
+    }
+
+    function concat(str1, str2)
+    {
+        return str1 + " " + str2
+    }
+
+    console.log(concat("Zain","Arif"));
+
+    var arr = ["Zain",10];
+    console.log(arr[0]);
+    console.log(arr[1]);
+
+    arr[0] = "Zain Arif";
+    console.log(arr[0]);
+
+    arr = [[1,2,3],["a",30,40]];
+    console.log(arr[0][1]);
+    console.log(arr[1][0]);
+    console.log(arr[1][2]);
+
+</script>
