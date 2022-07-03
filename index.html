@@ -121,16 +121,136 @@
     console.log(arr[1][0]);
     console.log(arr[1][2]);
 
-    console.log("Before push : " + arr);
+    console.log("Before push : " + JSON.stringify(arr));
     arr.push("Zain");
-    console.log("After push : " + arr);
+    console.log("After push : " + JSON.stringify(arr));
     var removeItem = arr.pop();
-    console.log("After pop : " + arr);
-    console.log("Remove item : " + removeItem);
+    console.log("After pop : " + JSON.stringify(arr));
+    console.log("Remove item : " + JSON.stringify(removeItem));
     removeItem = arr.shift();
-    console.log("After shift : " + arr);
-    console.log("Remove item : " + removeItem);
+    console.log("After shift : " + JSON.stringify(arr));
+    console.log("Remove item : " + JSON.stringify(removeItem));
     arr.unshift("Happy");
-    console.log("After unshift : " + arr);
+    console.log("After unshift : " + JSON.stringify(arr));
+    
+
+
+    var myGlobal = 10;   // global
+
+    function func1()
+    {
+        var myGlobal1 = 20;     // local
+        oopsGlobal = 5;   // without var it becomes global variable
+    }
+
+    function func2()
+    {
+        var output = "";
+
+        if(typeof myGlobal != "undefined")
+        {
+            output += "myGlobal : " + myGlobal;
+        }
+
+        if(typeof oopsGlobal != "undefined")
+        {
+            if(output != "")
+            {
+                output += "\n"; 
+            }
+            output += "oopsGlobal : " + oopsGlobal;
+        }
+
+        if(typeof myGlobal1 != "undefined")
+        {
+            if(output != "")
+            {
+                output += "\n"; 
+            }
+            output += "myGlobal1 : " + myGlobal1;
+        }
+
+        console.log(output);
+    }
+
+    func1();
+    func2();
+
+
+    var outWear = "T-Shirt";
+
+    function myOutfit()
+    {
+        var outWear = "Sweater";
+
+        return outWear;     //local variable takes precedence over global variable
+    }
+
+    console.log(myOutfit());  //Sweater
+    console.log(outWear);     //T-Shirt
+
+
+    function equalOp(val)
+    {
+        if(val == 10)
+        {
+            return "Equal";
+        }
+        return "Not Equal";
+    }
+
+    function strictEqualOp(val)
+    {
+        if(val === '10')
+        {
+            return "Equal";
+        }
+        return "Not Equal";
+    }
+
+    console.log("Equal Operator : " + equalOp(10));
+    console.log("Strict Equal Operator : " + strictEqualOp(10));
+
+    function notEqualOp(val)
+    {
+        if(val != 10)
+        {
+            return "Not Equal";
+        }
+        return "Equal";
+    }
+
+    function strictNotEqualOp(val)
+    {
+        if(val !== '10')
+        {
+            return "Not Equal";
+        }
+        return "Equal";
+    }
+
+    console.log("Not Equal Operator : " + notEqualOp(10));
+    console.log("Strict Not Equal Operator : " + strictNotEqualOp(10));
+
+
+    var obj = {
+        "name" : "zain",
+        "age"  : 25
+    };
+
+    console.log("My name : " + obj.name);
+    console.log("My age : " + obj.age);
+
+    obj.name = "Zain Arif";
+    console.log("My name : " + obj["name"]);
+
+    obj.profession = "Software Engineer";
+    console.log("My profession : " + obj["profession"]);
+
+    obj["profession"] = "Senior Software Engineer";
+    console.log("My profession : " + obj.profession);
+
+
+
 
 </script>
