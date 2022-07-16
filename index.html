@@ -249,7 +249,67 @@
 
     obj["profession"] = "Senior Software Engineer";
     console.log("My profession : " + obj.profession);
+ 
+    console.log("before delete obj =  " +  JSON.stringify(obj));
+    delete obj.profession;
+    console.log("after delete obj =  " +  JSON.stringify(obj));
 
+    function isPropExist(prop)
+    {
+        if(obj.hasOwnProperty(prop))
+        {
+            return obj[prop];
+        }
+        else
+        {
+            return "Not Found";
+        }
+    }
+
+    console.log(`Property "Name" : ` + isPropExist("name"));
+    console.log(`Property "Profession" : ` + isPropExist("profession"));
+
+    var emp = {
+        "name" : {
+            "firstName" : "Zain",
+            "lastName" : "Arif"
+        },
+        "age" : 26
+    };
+
+    console.log("First Name : " + emp.name.firstName);
+    console.log("Last Name : " + emp.name.lastName);
+
+
+    var plants = [
+        {
+            "type" : "flowers",
+            "list" : [
+                "rose",
+                "tulip"
+            ]
+        },
+        {
+            "type" : "trees",
+            "list" : [
+                "pine",
+                "fir"
+            ]
+        }
+    ];
+
+    console.log("Tree : "+ plants[1].list[0]);
+
+    var arr = [];
+    var i = 0;
+
+    while(i < 5)
+    {
+        arr.push(i);
+        i++;
+    }
+
+    console.log("arr : " + JSON.stringify(arr));
 
 
 
