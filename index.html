@@ -1,5 +1,7 @@
 <script>
     
+    //"use strict";   // this enables stric mode which catches common coding mistakes & unsafe actions. it is used at the top of js file
+
     // var can be used throughout whole program
 
     var objA = "Hi Zain.";
@@ -311,6 +313,132 @@
 
     console.log("arr : " + JSON.stringify(arr));
 
+
+    function multiplyAll(arr)
+    {
+        var product = 1;
+
+        for(var i = 0; i < arr.length; i++)
+        {
+            for(var j = 0; j < arr[i].length; j++)
+            {
+                product *= arr[i][j];
+            }
+        }
+
+        return product;
+    }
+
+    var productArr = [[1,2],[3,4],[5,6,7]];
+    var product = multiplyAll(productArr);
+    console.log("Product of " + JSON.stringify(productArr) + " : " + product);
+
+
+
+
+    var array1 = [];
+    var k = 10;
+    
+    do
+    {
+        array1.push(k);
+        k++;
+    }
+    while(k < 5);
+
+    console.log("Do While - k : " + k + " , array1 : " + array1);
+
+
+    function randomFraction()
+    {
+        return Math.random();   // generate number between 0 & 1 ... it could be 0 but not 1
+    }
+
+    console.log("Random fraction number : " + randomFraction());
+
+
+
+    function randomWholeNumber()
+    {
+        return Math.floor(Math.random() * 10); 
+    }
+
+    console.log("Random whole number : " + randomWholeNumber());
+
+    function convertToInt(str, base)
+    {
+        if(base != "undefined" || base != '')
+        {
+            return  parseInt(str, base);
+        }
+        else
+        {
+            return parseInt(str);
+        }
+    }
+
+    console.log(`convert string "100" to int : ` + convertToInt("100"));
+    console.log(`convert string "10011" to int with base 2 : ` + convertToInt("10011",2));
+
+
+    function isEqual(x, y)
+    {
+        return x === y ? "Yes" : "No";
+    }
+
+    console.log("10 & 11 are equal ? " + isEqual(10,11));
+
+
+    function checkSign(num)
+    {
+        return num > 0 ? "positive" : num < 0 ? "negative" : "zero";
+    }
+
+    console.log("sign of 10 : " + checkSign(10));
+    console.log("sign of -10 : " + checkSign(-10));
+    console.log("sign of 0 : " + checkSign(0));
+
+
+    var myName = "Zain";
+    console.log("My Name : " + myName);
+    var myName = "Zain Arif";
+    console.log("My Name : " + myName);
+
+    let myAge = 25;
+    console.log("My Age : " + myAge);
+    //let myAge = 25;   let does not allow to declare variable twice
+
+    function checkScope()
+    {
+        "use strict";
+
+        var i = "function scope";    // var enables function scope
+        let j = "function scope";
+
+        if(true)
+        {
+            i = "block scope";
+            console.log("block scope i is : " + i);
+
+            let j = "block scope";       // let enables block scope
+            console.log("block scope j is : " + j);
+
+            var k = "block scope";      // var enables function scope
+            console.log("block scope k is : " + k);
+            
+        }
+
+        console.log("function scope i is : " + i);
+
+        console.log("function scope j is : " + j);
+
+        console.log("function scope k is : " + k);
+    }
+
+    checkScope();
+
+    
+ 
 
 
 </script>
