@@ -437,7 +437,98 @@
 
     checkScope();
 
+    const arrConst = [1,2,3];
+    console.log("const array : " + JSON.stringify(arrConst));
+
+    //arrConst = [4,5,6];  // throw error due to assigining in const variable but can be mutate as follows
+
+    arrConst[0] = 4; 
+    arrConst[1] = 5;
+    arrConst[2] = 6;
+
+    console.log("mutated const array : " + JSON.stringify(arrConst));
+
+    function freezeObj()
+    {
+        "use strict";
+
+        const mathConst = {
+            "PI" : 3.14
+        };
+
+        console.log("Freezing mathConst object");
+        
+        Object.freeze(mathConst);
+
+        try
+        {
+            mathConst.PI = 6.23;
+        }
+        catch(ex)
+        {
+            console.log(ex);
+        }
+
+        return mathConst.PI;
+    }
+
+    const PI = freezeObj();
+
+
+    // arrow functions
+
+    /*
+    const annObj = function()
+    {
+        return new Date();
+    }
+    */
+
+    const annObj = () =>
+    {
+        return new Date();
+    }
+
+    const annObj1 = () => new Date();  // if returning one value
     
+    console.log(annObj());
+    console.log(annObj1());
+
+    const concatName = (firstName, lastName) => firstName + " " + lastName;
+
+    console.log(concatName("zain","arif"));
+
+    const realNumArr = [2,4.5,-6.2,3,8,-9];
+
+    const squareList = (arr) => {
+        const squardedNum = arr.filter(num => Number.isInteger(num) && num > 0).map(x => x * x);
+        return squardedNum;
+    }
+
+    const squaredNumList = squareList(realNumArr);
+
+    console.log(squaredNumList);
+
+    const sum1 = (function(){
+        return function sum(...args){  // ... = rest operator (it is used for n number of inputs)
+            return args.reduce((a,b) => a + b,0);
+        };
+    })();
+
+    console.log(sum1(1,2,3));
+    console.log(sum1(1,2,3,4));
+
+    const months = ['Jan','Feb','Mar'];
+    let months2;
+
+    (function(){
+        months2 = [...months]; // ... = spread operator (for copying)
+        months[0] = 'Apr';
+    })();
+
+    console.log(months2);
+    
+
  
 
 
