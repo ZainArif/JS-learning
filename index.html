@@ -527,9 +527,124 @@
     })();
 
     console.log(months2);
-    
 
- 
 
+
+    // destructuring assignment 
+
+    const voxel = {
+        x : 3.6,
+        y : 7.4,
+        z : 6.54
+    };
+
+    /*
+    const p = voxel.x;
+    const q = voxel.y;
+    const r = voxel.z    
+    */
+
+    const {x : p, y : q, z : r} = voxel;  // object destructuring
+
+    console.log(p);
+    console.log(q);
+    console.log(r);
+
+
+    const local_forecast = {
+        today : {
+            min : 72,
+            max : 75
+        },
+        tomorrow : {
+            min : 73,
+            max : 76
+        }
+    };
+
+    const { tomorrow : {max : tomorrowMax} } = local_forecast;  // object destructuring
+
+    console.log(tomorrowMax);
+
+    const [x,y,,z] = [1,2,3,4,5];    // array destructuring    // assign in order
+
+    console.log(x);
+    console.log(y);
+    console.log(z);
+
+
+    const source = [1,2,3,4,5,6,7,8,9];
+
+    function removeFirstTwo(list){
+        const [,,...arr] = list;   // rest operator destructuring
+        return arr;
+    };
+
+    const aarr = removeFirstTwo(source);
+
+    console.log(source);
+    console.log(aarr);
+
+
+    const stats = {
+        max : 22,
+        min : 10,
+        avg : 16
+    };
+
+    const half = (function(){
+        return function half({min, max}){  // destructuring to pass an object as function parameters 
+            return (min+max)/2;
+        };
+    })();
+
+    console.log(stats);
+    console.log(half(stats));
+
+    // template literals
+
+    const me = {
+        name : "zain arif",
+        age : 25
+    };
+
+    const msg = `My name is ${me.name}!
+    I am ${me.age} years old.`
+
+    console.log(msg);
+
+
+    class spaceShuttle{
+        constructor(targetPlanet){
+            this.targetPlanet = targetPlanet;
+            this._planet = 'Jupiter'
+        };
+
+        get planet(){
+            return this._planet;
+        };
+
+        set planet(name){
+            this._planet = name;
+        };
+    };
+
+    var zeus = new spaceShuttle('Earth');
+
+    console.log(zeus.targetPlanet);
+    console.log(zeus.planet);
+    zeus.planet = 'Mars';
+    console.log(zeus.planet);
+
+
+    //  import {capitailze} from "./functions".
+
+    //  import  * as capitailze from "./functions".         // impor all from file
+
+    //  export {capitailze}
+
+    // export default function subtract(x,y) {return x-y;}
+
+    //  import subtract from "./functions".     // import default 
 
 </script>
